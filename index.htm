@@ -1,0 +1,806 @@
+<!DOCTYPE HTML>
+<html lang="ru-RU">
+<head>
+    <title>ШРИ: Вводная лекция по CSS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1274, user-scalable=no">
+    <link rel="stylesheet" href="themes/ribbon/styles/style.css">
+    <style>
+        #Cover h2 {
+            color: #FFF;
+            text-align: center;
+            font-size: 70px;
+        }
+
+        #FitToWidth h2,
+        #FitToHeight h2 {
+            color: #FFF;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="list">
+<header class="caption">
+    <h1>ШРИ: Вводная лекция по CSS</h1>
+    <p>Вадим Пацев</p>
+</header>
+<div class="slide shout" id="cover">
+    <div>
+        <section>
+            <header>
+                <h2>ШРИ: Вводная лекция по CSS</h2>
+            </header>
+            <p>Вадим Пацев</p>
+        </section>
+    </div>
+</div>
+<div class="slide" id="toc">
+    <div>
+        <section>
+            <header>
+                <h2>TOC</h2>
+            </header>
+            <ul>
+                <li>Базовый синтаксис</li>
+                <li>Экосистема CSS</li>
+                <li>Спецификации и стандарты</li>
+            </ul>
+        </section>
+    </div>
+</div>
+<div class="slide shout" id="css">
+    <div>
+        <section>
+            <header>
+                <h2>Шаманство</h2>
+            </header>
+        </section>
+    </div>
+</div>
+<div class="slide  shout" id="selectors">
+    <div>
+        <section>
+            <header>
+                <h2>Selectors</h2>
+            </header>
+        </section>
+    </div>
+</div>
+<div class="slide" id="selectors-type">
+    <div>
+        <section>
+            <header>
+                <h2>Type selectors</h2>
+            </header>
+            <p>Выбор елементов по тегу</p>
+            <pre>
+                <code>span { </code>
+                    <code>  background-color: red; </code>
+                    <code>  color: #ffffff; </code>
+                <code>}</code>
+            </pre>
+        </section>
+    </div>
+</div>
+
+<div class="slide" id="selectors-id">
+    <div>
+        <section>
+            <header>
+                <h2>ID selectors</h2>
+            </header>
+            <p>Выбор елементов по ID</p>
+            <pre>
+                <code>span#identified {</code>
+                <code>  background-color: red; </code>
+                <code>}</code>
+            </pre>
+        </section>
+    </div>
+</div>
+<div class="slide" id="selectors-id1"><div>
+		<section>
+			<header>
+				<h2>ID selectors</h2>
+			</header>
+			<blockquote>
+				<p>What makes attributes of type ID special is that no two such attributes can have the same value in a conformant document, regardless of the type of the elements that carry them;</p>
+			</blockquote>
+		</section>
+	</div></div>
+<div class="slide" id="selectors-class">
+    <div>
+        <section>
+            <header>
+                <h2>Class selectors</h2>
+            </header>
+            <p>Выбор елементов по классу</p>
+            <pre>
+                <code>span.classy {</code>
+                <code>  background-color: red; </code>
+                <code>}</code>
+            </pre>
+        </section>
+    </div>
+</div>
+<div class="slide" id="selectors-universal">
+    <div>
+        <section>
+            <header>
+                <h2>Universal selectors</h2>
+            </header>
+            <p>Выбор всех элементов</p>
+            <pre>
+                <code>* {</code>
+                <code>  background-color: red; </code>
+                <code>}</code>
+            </pre>
+        </section>
+    </div>
+</div>
+<div class="slide" id="selectors-attr1">
+    <div>
+        <section>
+            <header>
+                <h2>Attribute selectors</h2>
+            </header>
+            <p>Выбор элементов с определенным атрибутом</p>
+            <pre>
+                <code> /* Все span с атрибутом lang */</code>
+                <code>span[lang] {</code>
+                <code>  font-weight:bold;</code>
+                <code>}</code>
+            </pre>
+        </section>
+    </div>
+</div>
+<div class="slide" id="selectors-attr2">
+    <div>
+        <section>
+            <header>
+                <h2>Attribute selectors</h2>
+            </header>
+            <p>Выбор элементов с определенным атрибутом</p>
+            <pre>
+                <code>/* Все span c атрибутом lang="ru" */</code>
+                <code>span[lang="ru"] {</code>
+                <code>  color:green;</code>
+                <code>}</code>
+            </pre>
+            <p class="note"><a href="http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#attribute-selectors" target="_blank">W3C: attribute-selectors</a></p>
+        </section>
+    </div>
+</div>
+<div class="slide shout" id="combinators">
+    <div>
+        <section>
+            <header>
+                <h2>Combinators</h2>
+            </header>
+        </section>
+    </div>
+</div>
+
+<div class="slide" id="combinators-des">
+    <div>
+        <section>
+            <header>
+                <h2>Descendant combinators</h2>
+            </header>
+            <p>Выбор элементов у которых есть родитель</p>
+            <pre>
+                <code>div span {</code>
+                <code>  color:green;</code>
+                <code>}</code>
+            </pre>
+        </section>
+    </div>
+</div>
+<div class="slide" id="combinators-des1">
+    <div>
+        <section>
+            <header>
+                <h2>Descendant combinators</h2>
+            </header>
+            <pre>
+                <code>&lt;div&gt;</code>
+                <code>  &lt;span&gt;<mark>Span 1.</mark></code>
+                <code>      &lt;span&gt;<mark>Span 2.</mark>&lt;/span&gt;</code>
+                <code>  &lt;/span&gt;</code>
+                <code>&lt;/div&gt;</code>
+                <code> &lt;span&gt;<mark>Span 3.</mark>&lt;/span&gt;</code>
+            </pre>
+        </section>
+    </div>
+</div>
+<div class="slide" id="combinators-child">
+    <div>
+        <section>
+            <header>
+                <h2>Child combinators</h2>
+            </header>
+            <p>Выбор элементов у которых есть непосредственный родитель</p>
+            <pre>
+                <code>div > span {</code>
+                <code>  color:green;</code>
+                <code>}</code>
+            </pre>
+        </section>
+    </div>
+</div>
+<div class="slide" id="combinators-child1">
+    <div>
+        <section>
+            <header>
+                <h2>Child combinators</h2>
+            </header>
+            <pre>
+                <code>&lt;div&gt;</code>
+                <code>  &lt;span&gt;<mark>Span 1.</mark></code>
+                <code>      &lt;span&gt;Span 2.&lt;/span&gt;</code>
+                <code>  &lt;/span&gt;</code>
+                <code>&lt;/div&gt;</code>
+                <code> &lt;span&gt;Span 3.&lt;/span&gt;</code>
+            </pre>
+        </section>
+    </div>
+</div>
+<div class="slide" id="combinators-as">
+    <div>
+        <section>
+            <header>
+                <h2>Adjacent sibling combinators</h2>
+            </header>
+            <p>Выбор элементов у которых есть непосредственный предшественник</p>
+            <pre>
+                <code>li + li {</code>
+                <code>  color:green;</code>
+                <code>}</code>
+            </pre>
+        </section>
+    </div>
+</div>
+<div class="slide" id="combinators-as2">
+    <div>
+        <section>
+            <header>
+                <h2>Adjacent sibling combinator</h2>
+            </header>
+            <pre>
+                <code>&lt;ul&gt;</code>
+                <code>  &lt;li&gt;One&lt;/li&gt;</code>
+                <code>  &lt;li&gt;<mark>Two</mark>&lt;/li&gt;</code>
+                <code>  &lt;li&gt;<mark>Three</mark>&lt;/li&gt;</code>
+                <code>&lt;/ul&gt;</code>
+            </pre>
+        </section>
+    </div>
+</div>
+<div class="slide" id="combinators-gsc">
+    <div>
+        <section>
+            <header>
+                <h2>General sibling combinator</h2>
+            </header>
+            <p>Выбор элементов у которых есть предшественник</p>
+            <pre>
+                <code>h1 ~ p {</code>
+                <code>  color:green;</code>
+                <code>}</code>
+            </pre>
+        </section>
+    </div>
+</div>
+<div class="slide" id="combinators-grouping">
+    <div>
+        <section>
+            <header>
+                <h2>Группировка селекторов</h2>
+            </header>
+            <pre>
+                <code>h1, p, span {</code>
+                <code>  color: green;</code>
+                <code>}</code>
+                <code> </code>
+                <code>.kvadratish,</code>
+                <code>.praktish,</code>
+                <code>.gut {</code>
+                <code>  color: green;</code>
+                <code>}</code>
+            </pre>
+        </section>
+    </div>
+</div>
+<div class="slide" id="selectors-weigth">
+    <div>
+        <section>
+            <header>
+                <h2>Вес селекторов</h2>
+            </header>
+            <blockquote>
+                A selector's specificity is calculated as follows:<br />
+                count 1 if the declaration is from is a 'style' attribute rather than a rule with a selector, 0 otherwise ...<br />
+                count the number of ID attributes in the selector<br />
+                count the number of other attributes and pseudo-classes in the selector<br />
+                count the number of element names and pseudo-elements in the selector<br />
+            </blockquote>
+            <p class="note"><a href="http://www.w3.org/TR/CSS21/cascade.html#specificity" target="_blank">W3C: Calculating a selector's specificity</a></p>
+        </section>
+    </div>
+</div>
+<div class="slide  shout" id="pseudo-class">
+    <div>
+        <section>
+            <header>
+                <h2>Pseudo-classes</h2>
+            </header>
+        </section>
+    </div>
+</div>
+<div class="slide" id="pseudo-class1">
+    <div>
+        <section>
+            <header>
+                <h2>Pseudo-classes — Синтаксис</h2>
+            </header>
+            <p>Правила которые применяются к элементам в особом состоянии.</p>
+            <pre>
+                <code>selector:pseudo-class {</code>
+                <code>  property: value;</code>
+                <code>}</code>
+            </pre>
+        </section>
+    </div>
+</div>
+<div class="slide" id="pseudo-class2">
+    <div>
+        <section>
+            <header>
+                <h2>Pseudo-elements</h2>
+            </header>
+            <ul>
+                <li>:link</li>
+                <li>:visited</li>
+                <li>:active</li>
+                <li>:hover</li>
+                <li>:focus</li>
+           </ul>
+        </section>
+    </div>
+</div>
+<div class="slide" id="pseudo-class3">
+    <div>
+        <section>
+            <header>
+                <h2>Pseudo-elements — :first-child</h2>
+            </header>
+           <pre>
+               <code>span:first-child{ color: red }</code>
+               <code> </code>
+               <code>&lt;div&gt;</code>
+               <code>    &lt;span&gt;Очень &lt;/span&gt;</code>
+               <code>    &lt;b&gt;важный &lt;/b&gt;</code>
+               <code>    &lt;span&gt;фрагмент</code>
+               <code>        &lt;em&gt; текста&lt;/em&gt;</code>
+               <code>    &lt;/span&gt;</code>
+               <code>&lt;/div&gt;</code>
+           </pre>
+        </section>
+    </div>
+</div>
+<div class="slide" id="pseudo-class4">
+    <div>
+        <section>
+            <header>
+                <h2>Pseudo-elements — :first-child</h2>
+            </header>
+            <p>Элемент который является первым ребенком своего родителя</p>
+            <pre>
+               <code>&lt;div&gt;</code>
+               <code>    <mark>&lt;span&gt;Очень &lt;/span&gt;</mark></code>
+               <code>    &lt;b&gt;важный &lt;/b&gt;</code>
+               <code>    &lt;span&gt;фрагмент</code>
+               <code>        &lt;em&gt; текста&lt;/em&gt;</code>
+               <code>    &lt;/span&gt;</code>
+               <code>&lt;/div&gt;</code>
+           </pre>
+        </section>
+    </div>
+</div>
+<div class="slide" id="pseudo-class5">
+    <div>
+        <section>
+            <header>
+                <h2>Pseudo-elements — :first-child</h2>
+            </header>
+            <ul>
+                       <li>:nth-child</li>
+                       <li>:nth-of-type</li>
+                       <li>:first-of-type</li>
+                       <li>:empty</li>
+                       <li>:target</li>
+                       <li>:checked</li>
+                       <li>:disabled</li>
+                   </ul>
+                   <p class="note"><a href="http://www.w3.org/TR/selectors/#selectors" target="_blank">W3C: selectors</a></p>
+        </section>
+    </div>
+</div>
+<div class="slide  shout" id="pseudo-el">
+    <div>
+        <section>
+            <header>
+                <h2>Pseudo-elements</h2>
+            </header>
+        </section>
+    </div>
+</div>
+<div class="slide" id="pseudo-el1">
+    <div>
+        <section>
+            <header>
+                <h2>Pseudo-elements — Синтаксис</h2>
+            </header>
+            <p>Правила которые создают псевдо-элементы</p>
+            <pre>
+                <code>selector:pseudo-element {</code>
+                <code>  property: value;</code>
+                <code>}</code>
+            </pre>
+        </section>
+    </div>
+</div>
+<div class="slide" id="pseudo-el2">
+    <div>
+        <section>
+            <header>
+                <h2>Pseudo-elements</h2>
+            </header>
+            <ul>
+               <li><b>:after</b> — создает псевдо-элемент после элемента</li>
+               <li><b>:before</b> — создает псевдо-элемент до элемента</li>
+               <li><b>::first-letter</b> — создает псевдо-элемент вокруг первой буквы элемента</li>
+               <li><b>::first-line</b> — создает псевдо-элемент вокруг первой строчки элемента</li>
+               <li><b>::selection</b> — создает псевдо-элемент вокруг выделенного текста</li>
+           </ul>
+        </section>
+    </div>
+</div>
+<div class="slide" id="pseudo-el3">
+    <div>
+        <section>
+            <header>
+                <h2>Pseudo-elements</h2>
+            </header>
+            <p><b>:: или :?</b></p>
+            <p>:: — часть спецификации CSS и попытка разделить псевдо-классы и псевдо элементы. Большинство браузеров поддерживает оба варианта</p>
+        </section>
+    </div>
+</div>
+<div class="slide  shout" id="rules">
+    <div>
+        <section>
+            <header>
+                <h2>Css правила</h2>
+            </header>
+        </section>
+    </div>
+</div>
+<div class="slide" id="rules2">
+    <div>
+        <section>
+            <header>
+                <h2>Css правила</h2>
+            </header>
+            <pre>
+                <code>padding: 0; /* Короткая запись */</code>
+                <code> </code>
+                <code>padding: 1px 2px 3px 4px; /* Короткая запись */</code>
+                <code> </code>
+                <code>/* Полная запись */</code>
+                <code>padding-top:    1px;</code>
+                <code>padding-right:  2px;</code>
+                <code>padding-bottom: 3px;</code>
+                <code>padding-left:   4px;</code>
+            </pre>
+        </section>
+    </div>
+</div>
+<div class="slide" id="rules3">
+    <div>
+        <section>
+            <header>
+                <h2>Css правила</h2>
+            </header>
+            <pre>
+                <code>font: bold 12px/14px sans-serif;  /* Короткая запись */</code>
+                <code> </code>
+                <code>/* Полная запись */</code>
+                <code>font-weight: bold;</code>
+                <code>font-size:   12px;</code>
+                <code>line-height: 14px;</code>
+                <code>font-family: sans-serif;</code>
+            </pre>
+        </section>
+    </div>
+</div>
+<div class="slide" id="rules4">
+    <div>
+        <section>
+            <header>
+                <h2>Css правила</h2>
+            </header>
+            <pre>
+                <code>background: url(img.png) #888 repeat-y top left fixed;</code>
+                <code> </code>
+                <code>/* Полная запись */</code>
+                <code>background-image:      url(img.png);</code>
+                <code>background-color:      #888;</code>
+                <code>background-repeat:     repeat-y;</code>
+                <code>background-position:   top left;</code>
+                <code>background-attachment: fixed;</code>
+            </pre>
+        </section>
+    </div>
+</div>
+<div class="slide" id="rules5">
+    <div>
+        <section>
+            <header>
+                <h2>Css правила</h2>
+            </header>
+            <pre>
+                <code>-webkit-border-radius: 10px;</code>
+                <code> -khtml-border-radius: 10px;</code>
+                <code>   -moz-border-radius: 10px;</code>
+                <code>    -ms-border-radius: 10px;</code>
+                <code>     -o-border-radius: 10px;</code>
+                <code>        border-radius: 10px;</code>
+            </pre>
+        </section>
+    </div>
+</div>
+<div class="slide" id="rules6">
+    <div>
+        <section>
+            <header>
+                <h2>Css правила — значения</h2>
+            </header>
+            <pre>
+                <code>width:     100%;             /* px, pt, em */</code>
+                <code>font-size: 100%;             /* px, pt, em */</code>
+                <code>font-family: Courier, "Lucida Console", monospace;</code>
+                <code> </code>
+                <code>color: red;                  /* keyword */</code>
+                <code>color: #f00;                 /* #ff0000 hex */</code>
+                <code>color: rgb(255, 0, 0 );      /* rgb */</code>
+                <code>color: rgba(255, 0, 0, 0.5); /* rgb with alfa */</code>
+                <code>color: hsl(0, 100, 100);     /* hsl */</code>
+            </pre>
+        </section>
+    </div>
+</div>
+<div class="slide" id="rules7">
+    <div>
+        <section>
+            <header>
+                <h2>Css правила — значения</h2>
+            </header>
+            <pre>
+                <code>background-image:    url(img.png);  /* url */</code>
+                <code>background-image:    linear-gradient( 45deg, blue, red );</code>
+                <code> </code>
+                <code>transition-property: opacity, left, top, height;</code>
+                <code>transition-duration: 3s, 5s; /* seconds */</code>
+            </pre>
+        </section>
+    </div>
+</div>
+<div class="slide  shout" id="atrules">
+    <div>
+        <section>
+            <header>
+                <h2>@-rules</h2>
+            </header>
+        </section>
+    </div>
+</div>
+<div class="slide" id="atrules1">
+    <div>
+        <section>
+            <header>
+                <h2>At-rules</h2>
+            </header>
+            <ul>
+                <li><b>@import</b> — добавляет правила из внешнего файла.</li>
+                <li><b>@media</b> — группа правил, которая выполняется на определенном типе устройств</li>
+                <li>@namespace, @charset</li>
+                <li>@document, @supports, @font-face — mozilla experiment</li>
+            </ul>
+            <p><a href="https://developer.mozilla.org/en-US/docs/CSS/At-rule" target="_blank">MDN: At-rule</a></p>
+        </section>
+    </div>
+</div>
+<div class="slide" id="import">
+    <div>
+        <section>
+            <header>
+                <h2>@import — Синтаксис</h2>
+            </header>
+            <p>Добавление правил из внешнего файла.</p>
+            <pre>
+                <code>@import url; </code>
+                <code>или</code>
+                <code>@import url list-of-media-queries;</code>
+            </pre>
+        </section>
+    </div>
+</div>
+<div class="slide" id="import1">
+    <div>
+        <section>
+            <header>
+                <h2>@import — Примеры</h2>
+            </header>
+                    <pre>
+                        <code>@import url("fineprint.css") print;</code>
+                        <code>@import url("bluish.css") projection, tv;</code>
+                        <code>@import 'custom.css';</code>
+                        <code>@import "common.css" screen, projection;</code>
+                        <code>@import url('test.css') screen and (orientation:landscape);</code>
+                    </pre>
+        </section>
+    </div>
+</div>
+<div class="slide" id="media">
+    <div>
+        <section>
+            <header>
+                <h2>@media — Синтаксис</h2>
+            </header>
+            <p>Группа правил, которая выполняется на определенном типе устройств</p>
+                <pre>
+                    <code>@media media-types list-of-media-queries {</code>
+                    <code> /* media-specific rules */</code>
+                    <code>}</code>
+                </pre>
+            <p><b>media types</b> — all, print, projection, screen</p>
+        </section>
+    </div>
+</div>
+<div class="slide" id="media1">
+    <div>
+        <section>
+            <header>
+                <h2>@media — Примеры</h2>
+            </header>
+            <pre>
+                <code>@media screen {</code>
+                <code>  body { font-size: 10pt }</code>
+                <code>}</code>
+                <code>@media screen, print {</code>
+                <code>  body { font-size: 13px }</code>
+                <code>}</code>
+            </pre>
+        </section>
+    </div>
+</div>
+<div class="slide" id="media2">
+    <div>
+        <section>
+            <header>
+                <h2>@media — CSS media queries</h2>
+            </header>
+            <pre>
+                <code>@media screen and (max-width: 960) { ... }</code>
+                <code> </code>
+                <code>@media all and (orientation: portrait) { ... }</code>
+            </pre>
+            <p><a href="https://developer.mozilla.org/en-US/docs/CSS/Media_queries" target="_blank">MDN: CSS media queries</a></p>
+        </section>
+    </div>
+</div>
+<div class="slide shout" id="eco">
+    <div>
+        <section>
+            <header>
+                <h2>Экосистема</h2>
+            </header>
+        </section>
+    </div>
+</div>
+<div class="slide" id="eco1">
+    <div>
+        <section>
+            <header>
+                <h2>Экосистема — frameworks</h2>
+            </header>
+            <ul>
+                <li><a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a></li>
+                <li><a href="http://foundation.zurb.com/" target="_blank">Foundation</a></li>
+                <li><a href="http://960.gs/" target="_blank">960 grid system</a></li>
+            </ul>
+        </section>
+    </div>
+</div>
+<div class="slide" id="eco3">
+    <div>
+        <section>
+            <header>
+                <h2>Экосистема — preprocessors</h2>
+            </header>
+            <ul>
+                <li><a href="http://lesscss.org/" target="_blank">Less</a></li>
+                <li><a href="http://sass-lang.com/" target="_blank">Sass</a>, <a href="http://compass-style.org/" target="_blank">Compass</a></li>
+                <li><a href="http://learnboost.github.com/stylus/" target="_blank">Stylus</a></li>
+            </ul>
+        </section>
+    </div>
+</div>
+<div class="slide" id="eco4">
+    <div>
+        <section>
+            <header>
+                <h2>Экосистема — оптимизация</h2>
+            </header>
+            <ul>
+                <li><a href="http://css.github.com/csso/" target="_blank">Csso</a></li>
+                <li><a href="http://developer.yahoo.com/yui/compressor/" target="_blank">YUI compressor</a></li>
+            </ul>
+        </section>
+    </div>
+
+</div>
+<div class="slide" id="eco5">
+    <div>
+        <section>
+            <header>
+                <h2>Экосистема — can i use it?</h2>
+            </header>
+            <ul>
+                <li><a href="http://caniuse.com/" target="_blank">When can I use</a>... Compatibility tables for support of HTML5, CSS3, SVG and more in desktop and mobile browsers.</li>
+                <li><a href="http://html5please.com/" target="_blank">HTML5 please</a>. Look up HTML5, CSS3, etc features, know if they are ready for use, and if so find out how you should use them – with polyfills, fallbacks or as they are</li>
+                <li><a href="http://modernizr.com/" target="_blank">Modernizr</a>  is a JavaScript library that detects HTML5 and CSS3 features in the user’s browser</li>
+            </ul>
+        </section>
+    </div>
+</div>
+<div class="slide  shout" id="spec">
+    <div>
+        <section>
+            <header>
+                <h2>Документация</h2>
+            </header>
+        </section>
+    </div>
+</div>
+<div class="slide" id="spec1">
+    <div>
+        <section>
+            <header>
+                <h2>Документация</h2>
+            </header>
+            <ul>
+                <li><a href="http://www.w3.org/TR/CSS1/">CSS Level 1</a> — устарела</li>
+                <li><a href="http://www.w3.org/TR/CSS2/">CSS level 2 revision 1</a></li>
+                <li><a href="http://www.w3.org/TR/css-2010/#css3">CSS level 3</a> — пока готова не полностью</li>
+                <li><a href="http://www.w3.org/TR/css-2010/">CSS Snapshot 2010</a> — сейчас используется</li>
+            </ul>
+            <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/CSS/CSS_Reference">MDN: CSS Reference</a> — база актуальных знаний по css</li>
+            </ul>
+        </section>
+    </div>
+</div>
+<div class="slide shout" id="end">
+    <div>
+        <section>
+            <header>
+                <h2>Спасибо</h2>
+            </header>
+        </section>
+    </div>
+</div>
+<script src="scripts/script.js"></script>
+</body>
+</html>
