@@ -416,3 +416,12 @@ BODY {
 .full .progress-off {
 	z-index:1;
 	}
+
+.section-done {
+    color: #888;
+    text-decoration: line-through;
+}
+
+.section-next {
+    font-weight: bold;
+}
